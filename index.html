@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Min hemsida</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+   
+  </head>
+  <body>
+    <div id="json-data"></div>
+
+
+    <header>
+      <div class="header-wrapper">
+        <h1>Floramore</h1>
+        <h2>Ditt register för exotiska blommor och växter</h2>
+        <nav>
+          <ul>
+            <li><a href="#">Hem</a></li>
+            <li><a href="#">Tjänster</a></li>
+            <li><a href="#">Om oss</a></li>
+            <li><a href="#">Kontakt</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    
+
+    <div class="container">
+      <div class="image">
+        <img src="Dahlia.jpg">
+        <input type="text" id="blomart-input" placeholder="Skriv in en blom-art enligt nedan register">
+        <button id="sokSlakt">Sök</button>
+      </div>
+
+      <div class="image">
+        <img src="Dombeya.jpg">
+        <label for="favoritBlomma">Fyll i Favoritblomma</label>
+        <input type="text" id="favoritBlomma" placeholder="Fyll i din favoritblomma">
+      </div>
+
+      <div class="image">
+        <img src="Mariatistel.jpg">
+        <label for="input-data">Fyll i din favoritfärg</label>
+        <input type="text" id="input-data" placeholder="Fyll i din favoritfärg">
+        <button onclick="saveData()">Spara data</button>
+        <button onclick="loadData()">Visa data</button>
+      </div>
+
+    </div>
+
+    <p>Här kan man söka efter en blom-art eller fylla i sin egen favoritblomma eller favoritfärg. </p>
+
+    <table id="data-table">
+      <thead>
+        <tr>
+          <th>Data</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    
+
+    
+    <!--
+    <table id="myTable">
+      <thead>
+        <tr>
+          <th>Favoritblomma</th>
+          <th>Favoritfärg</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+         
+        </tr>
+      </tbody>
+    </table>
+             --> 
+
+
+    <div class="tables">
+      <table>
+        <tr>
+            <th>Släkt</th>
+            <th>Art</th>
+            <th>Färg</th>
+          
+          </tr>
+          <tr>
+            <td>Dombeyasläktet</td>
+            <td>Dombeya elegans</td>
+            <td>Rosa, röd, vit, gul</td>
+          </tr>
+          <tr>
+            <td>Dombeyasläktet</td>
+            <td>Dombeya wallichii</td>
+            <td>Röd, vit rosa, orange</td>
+          </tr>
+          <tr>
+            <td>Dahliasläktet</td>
+            <td>Kejsardahlior</td>
+            <td>Orange, rosa, vit, röd</td>
+          </tr>
+          <tr>
+            <td>Dahliasläktet</td>
+            <td>Jungfrudahlior</td>
+            <td>Rosa, lila, vit, gul</td>
+          </tr>
+          
+          <tr>
+            <td>Mariatistelsläktet</td>
+            <td>Spansk mariatistel</td>
+            <td>Lila, rosa, vit, röd</td>
+          </tr>
+          <tr>
+            <td>Mariatistelsläktet</td>
+            <td>Svensk mariatistel</td>
+            <td>Rosa, lila, vit, gul</td>
+          </tr>
+      </table>
+    </div>
+
+      <footer>
+        <p>Kontaktinformation</p>
+        <ul>
+          <li>Telefon: 0707353535</li>
+          <li>E-post: webbdatabas@floramore.com</li>
+        </ul>
+        <p>&copy; 2023 Floramore AB. Alla rättigheter förbehållna.</p>
+      </footer>
+      
+     <script src="floramore.js"></script>
+  </body>
+</html>
