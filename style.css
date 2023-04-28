@@ -124,3 +124,11 @@ p {
   color: rgb(134, 134, 134);
   font-style:inherit;
 }
+
+.omOss{
+  font-size: 20px;
+  text-align: left;
+  margin-right: 45%;
+  color: #95707c;
+}
+

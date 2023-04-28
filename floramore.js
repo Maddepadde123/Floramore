@@ -114,7 +114,6 @@ function saveData() {
 
 */
 
-
 var request = new XMLHttpRequest();
 request.open("GET", "floramore.json", true);
 request.onreadystatechange = function() {
@@ -125,21 +124,80 @@ request.onreadystatechange = function() {
 };
 request.send();
 
+function saveData() {
+ // Hämta datan från input-fälten
+  var inputNamn = document.getElementById("input-data").value;
+  var inputBlomma = document.getElementById("input-blomma").value;
+  
+  // Lägg till datan till en array i local storage
+   var dataArray = localStorage.getItem("data") ? JSON.parse(localStorage.getItem("data")) : []; 
+   var inputData = { namn: inputNamn, blomma: inputBlomma }; // byta namn på variablerna  
+   dataArray.push(inputData);
+   localStorage.setItem("data", JSON.stringify(dataArray));
+  
+   // Töm input-fälten  
+   document.getElementById("input-data").value = "";
+   document.getElementById("input-blomma").value = "";
+  } 
+  
+
+  document.addEventListener("DOMContentLoaded", function() {
+    var tableBody = document.getElementById("data-table").getElementsByTagName("tbody")[0];
+    tableBody.innerHTML = "";
+  });
+
+  
+  function loadData() {
+  // Hämta datan från local storage
+   var dataArray = localStorage.getItem("data") ? JSON.parse(localStorage.getItem("data")) : [];
+  
+   // Skapa en HTML-tabell med datan
+   var tableBody = document.getElementById("data-table").getElementsByTagName("tbody")[0];
+   tableBody.innerHTML = "";
+   for (var i = 0; i < dataArray.length; i++) {
+   var row = tableBody.insertRow(-1);
+   var cellNamn = row.insertCell(0);
+   var cellBlomma = row.insertCell(1);
+   cellNamn.innerHTML = dataArray[i].namn;
+   cellBlomma.innerHTML = dataArray[i].blomma;
+   }
+  }
+/*
+  document.addEventListener("DOMContentLoaded", function() {
+    var tableBody = document.getElementById("data-table").getElementsByTagName("tbody")[0];
+    tableBody.innerHTML = "";
+  }); */
+  
+/*
+  window.onload = function() {
+    var tableBody = document.getElementById("data-table").getElementsByTagName("tbody")[0];
+    tableBody.innerHTML = "";
+  };
+  */
 
 
+  
+  
 
 
+/*
 function saveData() {
   // Hämta datan från input-fältet
+  var inputBlomma = document.getElementById("favoritBlomma").value;
   var inputData = document.getElementById("input-data").value;
+  
 
   // Lägg till datan till en array i local storage
   var dataArray = localStorage.getItem("data") ? JSON.parse(localStorage.getItem("data")) : [];
   dataArray.push(inputData);
+  dataArray.push(favoritBlomma);
   localStorage.setItem("data", JSON.stringify(dataArray));
 
+
   // Töm input-fältet
+  document.getElementById("favoritBlomma").value = "";
   document.getElementById("input-data").value = "";
+  
 }
 
 function loadData() {
@@ -157,11 +215,11 @@ function loadData() {
   
 }
 
+*/
 
 
 
-
-
+/*
 
 // Hämta användarens input från input-fältet
 var input = document.getElementById("blomart-input").value;
@@ -194,4 +252,4 @@ if (blomart) {
 }
 
 
- 
+ */
