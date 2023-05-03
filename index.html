@@ -1,74 +1,13 @@
-<!--
- <!DOCTYPE html>
-<html>
-  <head>
-    <title>Min hemsida</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-   
-  </head>
-  <body>
-    <div id="json-data"></div>
-
-
-    <header>
-      <div class="header-wrapper">
-        <h1>Floramore</h1>
-        <h2>Ditt register för exotiska blommor och växter</h2>
-        <nav>
-          <ul>
-            <li><a href="#">Hem</a></li>
-            <li><a href="#">Utbud</a></li>
-            <li><a href="#">Om oss</a></li>
-            <li><a href="#">Kontakt</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    
-
-    <div class="container">
-      <div class="image">
-        <img src="Dahlia.jpg">
-        <input type="text" id="blomart-input" placeholder="Skriv in en blom-art enligt nedan register">
-        <button id="sokSlakt">Sök</button>
-      </div>
-
-      <div class="image">
-        <img src="Dombeya.jpg">
-        <label for="favoritBlomma">Fyll i Favoritblomma</label>
-        <input type="text" id="favoritBlomma" placeholder="Fyll i din favoritblomma">
-        
-      </div>
-
-      <div class="image">
-        <img src="Mariatistel.jpg">
-        <label for="input-data">Fyll i din favoritfärg</label>
-        <input type="text" id="input-data" placeholder="Fyll i din favoritfärg">
-        <button onclick="saveData()">Spara data</button>
-        <button onclick="loadData()">Visa data</button>
-      </div>
-
-    </div>
-
-    <p>Här kan man söka efter en blom-art eller fylla i sin egen favoritblomma eller favoritfärg. </p>
-
-    <table id="data-table">
-      <thead>
-        <tr>
-          <th>Favoritfärg</th>
-          <th>Favoritblomma</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-    
--->
 
 <!DOCTYPE html>
 <html>
  <head>
+  <meta charset="UTF-8">
   <title>Min hemsida</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type = "text/css" href="style.css">
+  <script src="floramore.js"defer></script>
+
+
  </head>
  <body>
 <div id="json-data"></div>
@@ -82,7 +21,7 @@
     <li><a href="#">Hem</a></li>
     <li><a href="sida2.html">Utbud</a></li>
     <li><a href="sida3.html">Om oss</a></li>
-    <li><a href="#">Kontakt</a></li>
+    <li><a href="sida4.html">Kontakt</a></li>
   </ul>
  </nav>
 </div>
@@ -90,33 +29,27 @@
 
  <div class="container">
  <div class="image">
- <img src="Dahlia.jpg">
+  <img src="Dahlia.jpg"> 
 </div>
 
 <div class="image">
 <img src="Dombeya.jpg">
- <label for="input-data">Fyll i din favoritblomma och favoritfärg</label>
-  <input type="text" id="input-data" placeholder="Fyll i din favoritblomma">
-  <input type="text" id="input-blomma" placeholder="Fyll i din favoritfärg">
- <button onclick="saveData()">Spara data</button>
- <button onclick="loadData()">Visa data</button>
-</div>
+<form action="/index.html" method="post">
+  <label for="blomma">Fyll i din favoritblomma och favoritfärg</label>
+  <input type="text" id="blomma" placeholder="Fyll i din favoritblomma" name="blomma">
+  <input type="text" id="blomfärg" placeholder="Fyll i din favoritfärg" name="blomfärg">
+ <button onclick="">Spara data</button>
+</form>
 
-
-
-
- <div class="image">
-<img src="Mariatistel.jpg">
- </div>
+<button id="hämtaData">Visa data</button>
 
 </div>
+   <div class="image">
+<img src="Mariatistel.jpg"> 
+    </div>
+  </div>
 
-
-
-
-<p>Här kan du fylla i din egen favoritblomma och favoritfärg och få den informationen presenterad för dig. </p>
-
-
+<p>Här kan du fylla i din egen favoritblomma och favoritfärg och få den informationen presenterad för dig genom att trycka på "Visa data". </p>
 
 <table id="data-table">
 <thead>
@@ -127,10 +60,6 @@
  <tbody></tbody>
  </table>
 
-
-
-
-
       <footer>
         <p>Kontaktinformation</p>
         <ul>
@@ -139,7 +68,6 @@
         </ul>
         <p>&copy; 2023 Floramore AB. Alla rättigheter förbehållna.</p>
       </footer>
-      
-     <script src="floramore.js"></script>
+  
   </body>
 </html>

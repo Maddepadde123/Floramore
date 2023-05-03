@@ -1,17 +1,4 @@
 {
-  "blomsläkten": [
-    {
-      "namn": "Ros",
-      "arter": [
-        {
-          "namn": "Rosa canina",
-          "färg": "Röd"
-        },
-        {
-          "namn": "Rosa rugosa",
-          "färg": "Lila"
-        }
-      ]
-    }
-  ]
+  "blomma": "Vitsippa",
+  "blomfärg": "Grå"
 }
