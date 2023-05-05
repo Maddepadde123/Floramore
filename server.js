@@ -25,13 +25,16 @@ app.use(function(err, req, res, next) {
     console.log(`Servern körs på port ${port}`);
     console.log('Servern startad');
   });
-  
-app.post("/index.html", (req, res) => {
-    let data = req.body;
+
+app.post("/index", (req, res) => {
     
-    let jsonData = JSON.stringify(data, null, 2);
-    fs.writeFile(floramoreFilepath, jsonData,(err) => {
-        if(err) console.log(err);
-    });
-    res.sendFile("index.html", {root: __dirname});
-});  
+  const jsonData = JSON.stringify(req.body, null, 2);
+  console.log("Hallå");
+  //Skriva JSON string till fil
+  fs.writeFileSync("floramore.json", jsonData, (err) => {
+      //Om error, skriv ut error
+      if(err){
+          console.log(err);
+      }
+  });
+}); 

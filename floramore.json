@@ -1,4 +1,18 @@
-{
-  "blomma": "Lilja",
-  "blomfärg": "Orange"
-}
+[
+  {
+    "blomma": "Maskros",
+    "blomfärg": "Röd"
+  },
+  {
+    "Blomma": "Vitsippa",
+    "Blomfärg": "Orange"
+  },
+  {
+    "Blomma": "Ros",
+    "Blomfärg": "Grön"
+  },
+  {
+    "Blomma": "Lilja",
+    "Blomfärg": "Grå"
+  }
+]

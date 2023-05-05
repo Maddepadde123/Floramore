@@ -1,28 +1,47 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const userFrom = document.getElementById("formBlomma");
 
+  userFrom.addEventListener("submit", async (event) => {
+      event.preventDefault();
 
-  //ClickEvent för btnLocalJson
-document.getElementById("hämtaData").addEventListener("click", getLocalJson);
+      let blomma = document.getElementById("blomma");
+      let blomfärg = document.getElementById("blomfärg");
 
-async function getLocalJson() {
-    //Hämta JSON string från lokal fil
-    let jsonString = await fetch("../floramore.json");
+      let newUser = {
+          Blomma: blomma.value,
+          Blomfärg: blomfärg.value
+      };
 
-    //Konvertera JSON till JS
-    let localDataObj = await jsonString.json();
-    console.log(localDataObj);
+      let response = await fetch("floramore.json");
+      let data = await response.json();
+      data.push(newUser);
+      
+      await fetch('index', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        });
+        
+  })
+});
 
-    //Skriva ut data från JS objekt till div-tag
-   var tableBody = document.getElementById("data-table").getElementsByTagName("tbody")[0];
-   tableBody.innerHTML = "";
-   for (var i = 0; i < localDataObj.length; i++) {
-    console.log("Inne i loopen");
-   var row = tableBody.insertRow(-1);
-   var cellNamn = row.insertCell(0);
-   var cellBlomma = row.insertCell(1);
-   cellNamn.innerHTML = localDataObj[i].blomma;
-   cellBlomma.innerHTML = localDataObj[i].blomfärg;
-   } 
-}
- 
+async function getDataFromJSON() {
+  let jsonPath = await fetch ("floramore.json");
 
+  let jsonObject = await jsonPath.json();
+  let output = "<table><tr><th>Favoritblomma</th><th>Favorit Färg</th>";
   
+  for (var i=0; i<jsonObject.length; i++) {
+
+      var counter = jsonObject[i];
+      output += `<tr>`;
+      output += `<td>${counter.Blomma}</td>`;
+      output += `<td>${counter.Blomfärg}</td>`;
+      output += `</tr>`;
+  }
+  output += "</tabel>"
+
+  document.getElementById("output").innerHTML = output;
+};

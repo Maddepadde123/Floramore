@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <title>Min hemsida</title>
   <link rel="stylesheet" type = "text/css" href="style.css">
-  <script src="floramore.js"defer></script>
+  <script src="floramore.js" defer></script>
 
 
  </head>
@@ -34,14 +34,14 @@
 
 <div class="image">
 <img src="Dombeya.jpg">
-<form action="/index.html" method="post">
+<form id="formBlomma" method="post">
   <label for="blomma">Fyll i din favoritblomma och favoritfärg</label>
   <input type="text" id="blomma" placeholder="Fyll i din favoritblomma" name="blomma">
   <input type="text" id="blomfärg" placeholder="Fyll i din favoritfärg" name="blomfärg">
- <button onclick="">Spara data</button>
+ <button type="submit">Spara data</button>
 </form>
 
-<button id="hämtaData">Visa data</button>
+<button onclick="getDataFromJSON()">Visa data</button>
 
 </div>
    <div class="image">
@@ -51,14 +51,7 @@
 
 <p>Här kan du fylla i din egen favoritblomma och favoritfärg och få den informationen presenterad för dig genom att trycka på "Visa data". </p>
 
-<table id="data-table">
-<thead>
- <tr>
- <th>Favoritblomma</th><th>Favorit Färg</th>
- </tr>
- </thead>
- <tbody></tbody>
- </table>
+<div id="output"></div>
 
       <footer>
         <p>Kontaktinformation</p>
