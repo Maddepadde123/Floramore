@@ -27,13 +27,11 @@ app.use(function(err, req, res, next) {
   });
   
 app.post("/index.html", (req, res) => {
-   // let inputBlomma = req.body.blomma;
-   // let inputFärg = req.body.blomfärg;
     let data = req.body;
+    
     let jsonData = JSON.stringify(data, null, 2);
     fs.writeFile(floramoreFilepath, jsonData,(err) => {
         if(err) console.log(err);
     });
-console.log("Nu är vi här");
     res.sendFile("index.html", {root: __dirname});
 });  
